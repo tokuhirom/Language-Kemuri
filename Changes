@@ -1,5 +1,8 @@
 Revision history for Language-Kemuri
 
+0.03
+    fixed build bug.
+
 0.0.2  Sat Mar 17 17:23:14 JST 2007
        use unpack.
        thanks to hio_d.
