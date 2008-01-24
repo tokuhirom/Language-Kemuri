@@ -2,7 +2,7 @@ package Language::Kemuri;
 use strict;
 use warnings;
 use Carp;
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 use Exporter;
 use Switch;
 our @EXPORT_OK = qw/kemuri/;
@@ -82,7 +82,7 @@ No bugs have been reported.
 
 Tokuhiro Matsuno  C<< <tokuhiro __at__ mobilefactory.jp> >>
 
-=head1 LICENCE AND COPYRIGHT
+=head1 LICENSE AND COPYRIGHT
 
 Copyright (c) 2007, Tokuhiro Matsuno C<< <tokuhiro __at__ mobilefactory.jp> >>. All rights reserved.
 
