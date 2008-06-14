@@ -2,7 +2,7 @@ package Language::Kemuri;
 use strict;
 use warnings;
 use Carp;
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 use Exporter;
 use Switch;
 our @EXPORT_OK = qw/kemuri/;
