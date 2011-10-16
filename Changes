@@ -1,5 +1,9 @@
 Revision history for Language-Kemuri
 
+0.07
+
+    - modernize package
+
 0.06
 
     - some tests moved to xt/
