@@ -4,8 +4,8 @@ use warnings;
 use Carp;
 our $VERSION = '0.06';
 use Exporter;
-use Switch;
 our @EXPORT_OK = qw/kemuri/;
+use 5.010001;
 
 sub kemuri {
     my $code = shift;
@@ -14,16 +14,16 @@ sub kemuri {
     my $buf = "";
     
     for my $c ( split //, $code ) {
-        switch ($c) {
-            case '`' {
+        given ($c) {
+            when (q{`}) {
                 push @stack, unpack("C*", reverse "Hello, world!");
             }
-            case '"' {
+            when (q{"}) {
                 my $x = pop @stack;
                 push @stack, $x;
                 push @stack, $x;
             }
-            case "'" {
+            when (q{'}) {
                 my $x = pop @stack;
                 my $y = pop @stack;
                 my $z = pop @stack;
@@ -31,19 +31,19 @@ sub kemuri {
                 push @stack, $z;
                 push @stack, $y;
             }
-            case '^' {
+            when ('^') {
                 my $x = pop @stack;
                 my $y = pop @stack;
                 push @stack, $x ^ $y;
             }
-            case '~' {
+            when ('~') {
                 my $x = pop @stack;
                 push @stack, -($x+1);
             }
-            case '|' {
+            when ('|') {
                 $buf .= reverse map { chr($_ % 256) } @stack;
             }
-            else {
+            default {
                 croak "unknown kemuri token $c in $code";
             }
         }
