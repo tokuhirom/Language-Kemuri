@@ -1,11 +1,8 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Base;
 use Language::Kemuri qw/kemuri/;
-BEGIN {
-    eval q[use Test::Base];
-    plan skip_all => "Test::Base required for testing base" if $@;
-};
 
 sub kemuri { Language::Kemuri::kemuri(@_) }
 
